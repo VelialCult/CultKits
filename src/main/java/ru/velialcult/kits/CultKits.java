@@ -14,6 +14,7 @@ import ru.velialcult.kits.shop.ShopService;
 import ru.velialcult.library.bukkit.file.FileRepository;
 import ru.velialcult.library.bukkit.utils.ConfigurationUtil;
 import ru.velialcult.library.core.VersionAdapter;
+import ru.velialcult.library.update.UpdateChecker;
 
 public class CultKits extends JavaPlugin {
 
@@ -52,6 +53,9 @@ public class CultKits extends JavaPlugin {
             getLogger().info(VersionAdapter.TextUtil().colorize("  &fВсю полезную информацию Вы сможете найти в нашем Discord сервере"));
             getLogger().info(VersionAdapter.TextUtil().colorize("  &fСсылка на Discord сервер: &#FFA500https://dsc.gg/velialcult"));
             getLogger().info(" ");
+
+            UpdateChecker updateChecker = new UpdateChecker(this, "CultKits");
+            updateChecker.check();
 
             providersManager = new ProvidersManager(this);
 
