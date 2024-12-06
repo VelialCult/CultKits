@@ -1,0 +1,163 @@
+database:
+  url: "jdbc:sqlite:C:/Users/Win10_Game_OS/Desktop/DragoWorld/plugins/CultKits/database.db"
+
+messages:
+  shop:
+    dont-have-money: "&6ᴋɪᴛѕ &8| &cУ вас нет на балансе {value} для покупки набора"
+    buy: "&6ᴋɪᴛѕ &8| &fВы успешно приобрели набор &a{kit} &fза &e{value};title: &aУспешно! %new% &fНабор был выдан Вам"
+  dont-have-permission: "&6ᴋɪᴛѕ &8| &fУ вас нет разрешения &e{value} &fдля доступа к этой команде."
+  commands:
+    kit:
+      give:
+        usage: "&6ᴋɪᴛѕ &8| &fИспользуйте - &e/kits give [название] [набор]"
+        not-exists: "&6ᴋɪᴛѕ &8| &cНе удалось найти набор с названием {value}."
+        player-is-null: "&6ᴋɪᴛѕ &8| &cИгрок {value} не найден"
+        info: "&6ᴋɪᴛѕ &8| &fВам был выдан набор &e{kit}"
+        give: "&6ᴋɪᴛѕ &8| &fВы выдали набор &e{kit} &fигроку &a{player}"
+      no-permission: "&6ᴋɪᴛѕ &8| &cУ вас недостаточно прав"
+      purchased:
+        create:
+          create: "&6ᴋɪᴛѕ &8| &fЗакончите настройку, используя меню - &e/kits settings;title:&aУспешно%new%&fПлатный Набор &e{value} &fбыл создан"
+      add:
+        usage: "&6ᴋɪᴛѕ &8| &fИспользуйте - &e/kits [add/full] [название] &7(Держите предмет в руке)"
+        not-exists: "&6ᴋɪᴛѕ &8| &fНе удалось найти набор с названием &e{value}&f."
+        item-not-found: "&6ᴋɪᴛѕ &8| &fПредмет в вашей &eглавной &fруке &cне найден"
+        add: "&6ᴋɪᴛѕ &8| &fВы успешно добавили предмет &a{value} &fв набор"
+        full: "&6ᴋɪᴛѕ &8| &fВы успешно добавили все предметы из &aинвентаря &fв набор &e{value}"
+      delete:
+        not-exists: "&6ᴋɪᴛѕ &8| &fНе удалось найти набор с названием &e{value}&f."
+        usage: "&6ᴋɪᴛѕ &8| &fИспользуйте - &e/kits delete [название]"
+        delete: "&6ᴋɪᴛѕ &8| &fНабор &e{value} &fуспешно удалён."
+      create:
+        create: "&6ᴋɪᴛѕ &8| &fЗакончите настройку, используя меню - &e/kits settings.;title:&aУспешно%new%&fНабор &e{value} &fбыл создан"
+        already-exists: "&6ᴋɪᴛѕ &8| &fНабор в ключём &e{value} &fуже создан."
+        usage: "&6ᴋɪᴛѕ &8| &fИспользуйте - &e/kits create [название] [true/false]"
+      help:
+        - '&6ᴋɪᴛѕ &8| &fПомощь по командам:'
+        - ' &6&l* &fСоздать набор - &e/kits create [название] [можно ли купить]'
+        - ' &6&l* &fУдалить набор - &e/kits delete [название]'
+        - ' &6&l* &fДобавить предметы в набор - &e/kits [add/full] [название] &7(Держите предмет в руке)'
+        - ' &6&l* &fВыдать набор - &e/kits give [набор] [игрок]'
+        - ' &6&l* &fНастройка наборов - &e/kits settings'
+        - ' &6&l* &fМагазин наборов - &e/kits shop'
+        - ''
+        - ' &6&l* &7Подсказка:'
+        - '   &8- &fadd &7- добавить предмет из руки в набор'
+        - '   &8- &ffull &7- добавить все предметы из инвентаря в набор'
+inventories:
+  shop:
+    title: "&8Магазин наборов"
+    structure:
+      - '. . . . . . . . .'
+      - '. # . # . # . # .'
+      - '. # . # . # . # .'
+      - '. # . # . # . # .'
+      - '. # . # . # . # .'
+      - '. b . . c . . n .'
+    items:
+      default:
+        custom: false
+        displayName: "&aНабор {kit}"
+        lore:
+          - ''
+          - ' &8- &fСтоимость: &e{price} &7({economy})'
+          - ''
+          - ' &8- &eНажмите ЛКМ, чтобы приобрести'
+          - ' &8- &eНажмите ПКМ, чтобы просмотреть содержимое'
+        item:
+          material: "head"
+          head: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmI1ZDhiOWEzYTk0MjFkY2VkYjE3ZDcxZTNhODg0ZDk1ZWM1MDM4YzgzOGNlMTllZDZkOGU5NmM1YjIzZWQ3In19fQ=="
+  preview-menu:
+    title: "&8Просмотр набора"
+    structure:
+      - '. . . . . . . . .'
+      - '. # # # # # # # .'
+      - '. # # # # # # # u'
+      - '. # # # # # # # d'
+      - '. # # # # # # # .'
+      - '. . . . c . . . .'
+    items:
+      close:
+        symbol: c
+        displayName: "&cЗакрыть"
+        lore: []
+        actionOnClick:
+          - '[close]'
+        item:
+          material: "BARRIER"
+          head: ""
+  kit-menu:
+    title: "&8Получение набора"
+    structure:
+      - '. . . . . . . . .'
+      - '. . . . x . . . .'
+      - '. . . . . . . . .'
+    items:
+      not-found:
+        symbol: x
+        custom: false
+        displayName: "&cНабор не найден"
+        lore:
+          - ''
+          - '&7Набор для вашей группы {group}'
+          - '&7не был найден.'
+          - ''
+          - '&7Возможно, вашей привилегии не доступен'
+          - '&7ни один набор или это техническая неполадка.'
+        item:
+          material: "BARRIER"
+          head: " "
+      drago:
+        symbol: x
+        custom: false
+        item:
+          material: "head"
+          head: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWU3MzgzMmUyNzJmODg0NGM0NzY4NDZiYzQyNGEzNDMyZmI2OThjNThlNmVmMmE5ODcxYzdkMjlhZWVhNyJ9fX0="
+      available:
+        displayName: "&7Набор {group}"
+        lore:
+          - ''
+          - '&7Данный набор доступен для привилегии'
+          - '{group}'
+          - ''
+          - '&fЗадержка: &a{cooldown}'
+          - ''
+          - ' &8- &aНажмите, чтобы получить'
+          - ' &8- &eНажмите ПКМ, чтобы посмотреть содержимое'
+      un-available:
+        displayName: "&7Набор {group}"
+        lore:
+          - ''
+          - '&7Данный набор доступен для привилегии'
+          - '{group}'
+          - ''
+          - '&7Осталось до получения:'
+          - ' &8- &a{cooldown}'
+          - ''
+          - ' &8- &cНедоступно к получению'
+          - ' &8- &eНажмите ПКМ, чтобы посмотреть содержимое'
+  buttons:
+    back-button:
+      displayName: '&aНазад'
+      lore: []
+      item:
+        material: head
+        head: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWM0OTFkYmZhMzcyZGY3OTk5MjYyY2JmYTg5MTY1MThhYjNlMzU5NWJkNmJkZGY5ZjdkMTk1ZGYzZjc4ODViZCJ9fX0=
+    forward-button:
+      displayName: '&aВперёд'
+      lore: []
+      item:
+        material: head
+        head: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTRhMzYzYWZkYTE5MjJmYWM4MTA3YjZiMGE1MWViNmY2YzU0MTU3NWUyZGE1NjIwOGY2NWFlY2RlZDI2MzE1YSJ9fX0=
+    scroll-down-button:
+      displayName: "&aВниз"
+      lore: []
+      item:
+        material: "head"
+        head: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWNiOGJlMTZkNDBjMjVhY2U2NGUwOWY2MDg2ZDQwOGViYzNkNTQ1Y2ZiMjk5MGM1YjZjMjVkYWJjZWRlYWNjIn19fQ=="
+    scroll-up-button:
+      displayName: "&aВверх"
+      lore: []
+      item:
+        material: "head"
+        head: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDVjNTg4YjllYzBhMDhhMzdlMDFhODA5ZWQwOTAzY2MzNGMzZTNmMTc2ZGM5MjIzMDQxN2RhOTNiOTQ4ZjE0OCJ9fX0="

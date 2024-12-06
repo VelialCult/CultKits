@@ -1,0 +1,10 @@
+main: ru.velialcult.kits.CultKits
+name: CultKits
+version: '${project.version}'
+author: Nilsson03
+api-version: 1.16
+website: https://dsc.gg/velialcult
+softdepend:
+  - CultLibrary
+commands:
+  kits:
